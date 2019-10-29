@@ -35,6 +35,11 @@ public class ComparatorExample {
         devList.sort((Developer o1, Developer o2)->o1.getName().compareTo(o2.getName()));
         devList.forEach((developer -> System.out.print(developer.getName())));
 
+        //Using :: double colon operator
+        Comparator comparator = Comparator.comparing(Developer::getName);
+        devList.sort(comparator);
+        devList.forEach(developer -> System.out.println(developer.getName()));
+
         return devList;
     }
 
